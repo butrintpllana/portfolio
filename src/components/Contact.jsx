@@ -59,6 +59,7 @@ export default function Contact() {
 
             {/* Social links — simple text style */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+              <SocialRow href="https://butrint.xyz/" label="Website" handle="butrint.xyz" />
               <SocialRow href="https://github.com/butrintpllana" label="GitHub" handle="@butrintpllana" />
               <SocialRow href="https://linkedin.com/in/butrint-pllana" label="LinkedIn" handle="in/butrint-pllana" />
             </div>
