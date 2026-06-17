@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { ROLES } from '../data/content'
 
 export default function Hero({ onScrollToProjects, onScrollToContact }) {
   return (
@@ -11,17 +10,6 @@ export default function Hero({ onScrollToProjects, onScrollToContact }) {
       <div className="hero-wrap">
         {/* Left */}
         <div className="hero-col-l">
-
-          {/* Available badge */}
-          <motion.div
-            initial={{ scale: 0.7, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.1, type: 'spring', stiffness: 500, damping: 28 }}
-            style={{ display: 'inline-flex', alignItems: 'center', gap: '7px', padding: '5px 12px', borderRadius: '100px', border: '1px solid #82E9A5', background: '#DAFBE1' }}
-          >
-            <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#1A7F37', animation: 'pulse-green 2.5s ease-in-out infinite', display: 'inline-block', flexShrink: 0 }} />
-            <span style={{ fontSize: '12px', fontWeight: '600', color: '#1A7F37', fontFamily: "'Inter', sans-serif" }}>Available for Work</span>
-          </motion.div>
 
           {/* Name — line-by-line slide up */}
           <h1 className="hero-name" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: '700', color: '#1F2328' }}>
@@ -39,25 +27,17 @@ export default function Hero({ onScrollToProjects, onScrollToContact }) {
             ))}
           </h1>
 
-          {/* Role tags */}
-          <div className="hero-tags-row">
-            {ROLES.map((role, i) => (
-              <motion.span
-                key={role.label}
-                initial={{ opacity: 0, y: 10, scale: 0.93 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ delay: 0.58 + i * 0.09, duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                style={{
-                  display: 'inline-flex', alignItems: 'center', padding: '4px 12px',
-                  borderRadius: '100px', border: `1px solid ${role.border}`,
-                  background: role.bg, fontSize: '12px', fontWeight: '500',
-                  color: role.color, fontFamily: "'Inter', sans-serif", whiteSpace: 'nowrap',
-                }}
-              >
-                {role.label}
-              </motion.span>
-            ))}
-          </div>
+          {/* Status line */}
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.52, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            style={{ fontSize: '14px', color: '#6E7781', fontFamily: "'Inter', sans-serif", letterSpacing: '0.01em' }}
+          >
+            Frontend Engineer&nbsp;&nbsp;·&nbsp;&nbsp;Software Developer&nbsp;&nbsp;·&nbsp;&nbsp;Project Manager
+            <br />
+            <span style={{ color: '#8C959F' }}>Prishtina, Kosovo&nbsp;&nbsp;·&nbsp;&nbsp;Open to opportunities</span>
+          </motion.p>
 
           {/* Description */}
           <motion.p
